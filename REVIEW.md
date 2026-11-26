@@ -100,3 +100,20 @@
 | 공유 미리보기 절대 주소 (`og:image` · `og:url`) | ✗ 그대로: 배포 주소가 자료에 없음. 상대 주소로 둠 |
 
 - 전체 높이 (1440): 5315px → 5263px (연락처 보조 문장 한 줄이 빠짐).
+
+---
+
+## 7. 배포 전 검수 — Vercel (2026-11-26)
+
+AGENTS.md 7장 체크리스트를 배포 직전에 다시 확인했습니다.
+
+| 항목 | 결과 |
+|---|---|
+| GitHub에 올라간 파일의 키 · 토큰 · 비밀번호 · 전화번호 · 이메일 | ✓ 없음 (REVIEW.md의 검사 항목 이름만 걸림) |
+| 사이트의 `[확인 필요]` · 빈칸 | ✓ 0개 |
+| 페이지 제목 · 한 줄 설명 · 키워드 | ✓ 있음 |
+| 공유 미리보기 (`og:*` · `twitter:*`) | ✓ 있음 |
+| 구조화 정보 (JSON-LD `Person`) | ✓ 있음 |
+| `og:image` · `og:url` · `canonical` 절대 주소 | ✗ → 고침: 배포 주소가 정해져 `https://portfolio-blush-kappa-u4nxqvkjlc.vercel.app/` 기준 절대 주소로 바꾸고 `twitter:image` · 이미지 크기 · 대체 글도 더함 |
+| 배포 설정 | Vercel 프로젝트 `portfolio`, Framework Other(빌드 없음), GitHub `main` 브랜치 연결 → push마다 자동 배포 |
+| 공개 주소 | https://portfolio-blush-kappa-u4nxqvkjlc.vercel.app/ — 로그인 없이 응답 200, 이미지 200 |
