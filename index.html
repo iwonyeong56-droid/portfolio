@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이원영 포트폴리오 — 산업경영공학과 · 데이터 분석 · 서비스 기획</title>
+<meta name="description" content="산업경영공학과 3학년 이원영의 포트폴리오. 앨범 433개와 설문 70명으로 만든 K-pop 컴백 예측 모델, 카드 한 장으로 맞춤 해석을 보여 주는 AI 타로카드를 소개합니다.">
+<meta name="keywords" content="이원영, 포트폴리오, 산업경영공학, 데이터 분석, 머신러닝, 예측 모델, 스태킹 앙상블, 설문 설계, K-pop 컴백 예측, AI 타로카드, 서비스 기획">
+<meta name="author" content="이원영">
+<meta name="theme-color" content="#f5f4f0">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="이원영 포트폴리오">
+<meta property="og:title" content="이원영 포트폴리오 — 파이팅!">
+<meta property="og:description" content="데이터로 묻고 답하는 산업경영공학과 3학년. K-pop 컴백 예측 모델과 AI 타로카드를 만들었습니다.">
+<meta property="og:image" content="images/tarot-start.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="이원영 포트폴리오 — 파이팅!">
+<meta name="twitter:description" content="데이터로 묻고 답하는 산업경영공학과 3학년. K-pop 컴백 예측 모델과 AI 타로카드를 만들었습니다.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "이원영",
+  "description": "산업경영공학과 3학년. 데이터 분석·예측 모델링·서비스 기획.",
+  "knowsAbout": ["산업경영공학", "데이터 분석", "머신러닝", "예측 모델", "설문 설계", "서비스 기획"],
+  "sameAs": ["https://github.com/iwonyeong56-droid"],
+  "subjectOf": [
+    {"@type": "CreativeWork", "name": "AI 타로카드", "url": "https://dimly-neon-74224366.figma.site"},
+    {"@type": "CreativeWork", "name": "K-pop 컴백 예측 모델", "dateCreated": "2026-11-18"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Black+Han+Sans&display=swap" rel="stylesheet">
+<style>
+/* ===== 디자인 토큰 (원본 실측값) ===== */
+:root{
+  color-scheme:light;
+  --page-background:#f0efeb;
+  --bg:#f5f4f0;
+  --text:#252924;
+  --muted:#5d6357;
+  --note:#797f71;
+  --num:#717a68;
+  --foot:#6d7565;
+  --focus:#56734a;
+  --line-24:#25292424;
+  --line-25:#25292425;
+  --line-30:#25292430;
+  --line-33:#25292433;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --sans:Arial,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",sans-serif;
+  --display:"Anton","Black Han Sans",sans-serif;
+  --label:"Bebas Neue","Black Han Sans",sans-serif;
+  background:var(--page-background);
+  color:var(--text);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--page-background)}
+body{min-width:320px;font-family:var(--sans);word-break:keep-all;overflow-wrap:break-word}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+body:not([data-mode=choice]) #portfolio-entry{display:none}
+body:not([data-mode=simple]) #simple-portfolio{display:none}
+
+/* ===== 첫 화면 (portfolio-entry) ===== */
+.portfolio-entry{position:fixed;inset:0;display:grid;place-items:center;padding:32px 20px;background:var(--bg);color:var(--text);overflow-y:auto}
+.portfolio-entry__brand{position:absolute;top:clamp(25px,6vh,64px);left:0;right:0;text-align:center;font:22px var(--label);letter-spacing:.12em}
+.portfolio-entry__content{width:min(100%,650px);text-align:center}
+.portfolio-entry__eyebrow{margin:0 0 24px;font:11px var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.portfolio-entry h1{margin:0 0 24px;font:400 clamp(52px,8.5vw,118px)/1.02 var(--display);letter-spacing:-.04em}
+.portfolio-entry__intro{max-width:370px;margin:0 auto 32px;font:15px/1.6 var(--sans);color:#62665b}
+.portfolio-entry__actions{display:grid;gap:12px;width:min(100%,340px);margin:0 auto}
+.portfolio-entry__actions button{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:57px;border:1px solid var(--text);background:var(--text);color:var(--bg);padding:14px 20px;cursor:pointer;font:18px var(--label);letter-spacing:.05em;text-align:left}
+.portfolio-entry__actions button+button{background:transparent;color:var(--text)}
+.portfolio-entry__actions button:hover{opacity:.8}
+.portfolio-entry__note{margin:22px 0 0;font:12px/1.5 var(--sans);color:#727669}
+.portfolio-entry button:focus-visible{outline:2px solid var(--focus);outline-offset:5px}
+@media(max-height:600px){
+  .portfolio-entry__brand{top:16px}
+  .portfolio-entry h1{font-size:48px}
+  .portfolio-entry__eyebrow{margin-bottom:15px}
+  .portfolio-entry__intro{margin-bottom:20px}
+}
+@media(max-height:500px){
+  .portfolio-entry{display:block;padding-top:65px}
+  .portfolio-entry__content{margin:0 auto}
+  .portfolio-entry__brand{position:static;margin-bottom:24px}
+}
+
+/* ===== 심플 포트폴리오 (원본 CSS 실측값 그대로) ===== */
+.simple-portfolio{position:fixed;inset:0;overflow:auto;overflow-x:clip;overscroll-behavior:contain;background:var(--bg);color:var(--text);font-family:var(--sans);scroll-behavior:smooth}
+.simple-portfolio:focus{outline:none}
+.simple-wrap{width:min(1160px,calc(100% - 80px));margin:0 auto}
+.simple-portfolio section[id]{scroll-margin-top:110px}
+.simple-nav{position:sticky;top:20px;z-index:20;display:flex;align-items:center;justify-content:space-between;width:min(1100px,calc(100% - 60px));margin:20px auto 0;padding:8px 14px 8px 24px;min-height:62px;border:1px solid var(--line-24);border-radius:40px;background:#f5f4f0b8;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 4px 20px #333b2710}
+.simple-nav__brand{color:inherit;font:500 16px var(--sans);letter-spacing:.045em;text-decoration:none}
+.simple-nav__toggle{width:46px;height:44px;display:grid;align-content:center;gap:7px;justify-items:center;border:0;border-radius:50%;background:transparent;cursor:pointer}
+.simple-nav__toggle span{width:26px;height:2px;background:var(--text)}
+.simple-nav__links{position:absolute;top:calc(100% + 10px);right:0;display:grid;min-width:240px;padding:12px 18px;border:1px solid var(--line-24);border-radius:20px;background:#f5f4f0f5;box-shadow:0 10px 30px #25292415}
+.simple-nav__links[hidden]{display:none}
+.simple-nav__links :is(a,button){display:block;padding:13px 5px;border:0;background:transparent;color:inherit;text-align:left;font:500 15px var(--sans);text-decoration:none;cursor:pointer}
+.simple-nav__links button{border-top:1px solid var(--line-25)}
+.simple-eyebrow{display:block;font:11px/1.5 var(--sans);letter-spacing:.12em;margin:0 0 22px}
+.simple-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.8fr);align-items:center;gap:8%;min-height:calc(100dvh - 130px);padding:80px 0 105px}
+.simple-hero__title{margin:0 0 30px;font:600 clamp(45px,5.6vw,80px)/1.12 var(--sans);letter-spacing:-.025em;perspective:700px}
+.simple-hero__title span{display:block;transform-origin:top}
+.simple-hero__intro{max-width:530px;font:16px/1.7 var(--sans);color:var(--muted);margin:0 0 28px}
+.simple-actions{display:flex;flex-wrap:wrap;align-items:center;gap:28px}
+.simple-actions a,.simple-link{display:inline-flex;align-items:center;gap:32px;min-height:44px;color:inherit;font-size:14px;text-decoration:none}
+.simple-link{padding-block:12px;border-bottom:1px solid var(--text)}
+.simple-portrait{display:flex;flex-direction:column;justify-content:space-between;align-self:center;aspect-ratio:.78;padding:25px;background:#e6e6dc;border:1px solid var(--line-25);box-shadow:12px 12px #efeee7;transform:rotate(2deg)}
+.simple-portrait__image{display:grid;place-items:center;width:100%;min-height:0;flex:1 1 0;margin-bottom:20px;background:#d6d8cb;color:var(--muted);font:13px var(--sans);letter-spacing:.08em}
+.simple-portrait strong{display:block;font:500 20px var(--sans);margin-bottom:7px}
+.simple-portrait div>span{font:11px var(--sans);color:var(--muted)}
+.simple-hero__note{position:absolute;right:0;bottom:24px;margin:0;text-align:right;font:11px/1.6 var(--sans);color:var(--note)}
+.simple-about{display:grid;grid-template-columns:1fr 2fr;gap:8%;padding:90px 0 110px;border-top:1px solid var(--line-33)}
+.simple-about h2,.simple-section-head h2{margin:0 0 30px;font:600 clamp(36px,4.5vw,64px)/1.12 var(--sans);letter-spacing:-.025em}
+.simple-about p:not(.simple-eyebrow){max-width:620px;font:16px/1.8 var(--sans);color:var(--muted)}
+.simple-section-head{padding:25px 0 45px}
+.simple-section-head>p:last-child{max-width:450px;font:15px/1.7 var(--sans);color:var(--muted)}
+.simple-services{padding-top:30px}
+.simple-service-list{display:grid;gap:65px;padding:5px 0 90px}
+.simple-service{display:grid;grid-template-columns:32px minmax(0,1fr);gap:20px;width:68%;padding:25px 0}
+.simple-service:nth-child(2n){margin-left:auto}
+.simple-service__number{font:500 22px var(--sans);color:var(--num)}
+.simple-service h3{margin:0 0 24px;font:600 clamp(30px,4.2vw,58px)/1.12 var(--sans)}
+.simple-service p{max-width:590px;font:15px/1.7 var(--sans);color:var(--muted)}
+.simple-service .simple-service__tools{margin:25px 0 0;font-size:10px;letter-spacing:.1em}
+.simple-projects{padding:40px 0}
+.simple-project{display:grid;grid-template-columns:.75fr 1.25fr;gap:8%;align-items:center;padding:65px 0 90px;border-top:1px solid var(--line-30)}
+.simple-project:nth-of-type(2n){grid-template-columns:1.25fr .75fr}
+.simple-project:nth-of-type(2n) .simple-project__copy{order:2}
+.simple-project h3{margin:0 0 22px;font:600 clamp(28px,3.5vw,48px)/1.12 var(--sans)}
+.simple-project p{font:14px/1.8 var(--sans);color:var(--muted)}
+/* 프로젝트 이미지 (원본 CSS 규칙 그대로) */
+.simple-project :is(img,video,picture){display:block;width:100%;min-width:0;height:auto}
+.simple-project>:is(img,video,picture){box-shadow:0 10px 22px #25292412}
+/* 추가 컴포넌트: 대표 배지 · 프로젝트 정보 줄 (기존 토큰만 사용) */
+.simple-badge{display:inline-block;margin:0 0 18px;padding:5px 12px;border:1px solid var(--text);border-radius:40px;font:11px/1.5 var(--sans);letter-spacing:.12em}
+.simple-project__meta{margin:0 0 22px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px;font:10px/1.6 var(--sans);letter-spacing:.1em;color:var(--muted)}
+.simple-project[id]{scroll-margin-top:110px}
+/* 사진이 없을 때: 사진 자리에 한 줄 소개를 첫 화면 제목 글꼴로 (기존 토큰만 사용) */
+.simple-portrait__image--word{font:400 clamp(40px,4.4vw,64px)/1.02 var(--display);letter-spacing:-.04em;color:var(--text)}
+/* 이미지가 아직 없을 때 쓰는 자리 표시 (16:9, 원본 그림자 그대로) */
+.simple-project__media{display:grid;place-items:center;width:100%;min-width:0;aspect-ratio:16/9;background:#dce1d3;box-shadow:0 10px 22px #25292412;color:var(--muted);font:13px var(--sans);letter-spacing:.08em}
+.simple-contact{padding:80px 0 75px;border-top:1px solid var(--line-30)}
+.simple-contact h2{margin:0 0 40px;font:600 clamp(55px,8vw,112px)/1.05 var(--sans);letter-spacing:-.03em}
+.simple-contact a{display:block;width:fit-content;max-width:100%;color:inherit;text-decoration:none;font:14px/1.6 var(--sans);min-height:44px}
+.simple-contact .simple-contact__email{font-size:clamp(18px,3vw,32px);margin-bottom:18px;border-bottom:1px solid var(--text);overflow-wrap:anywhere}
+.simple-other-side{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:32px 0;border-top:1px solid var(--line-30)}
+.simple-other-side p{font:500 20px var(--sans)}
+.simple-other-side button,.simple-footer button{border:0;border-bottom:1px solid var(--text);background:transparent;color:inherit;min-height:44px;padding:8px 0;cursor:pointer;font:14px var(--sans)}
+.simple-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:28px 0 35px;font:10px var(--sans);letter-spacing:.06em;color:var(--foot)}
+
+/* ===== 모션 (원본 실측: .65s, cubic-bezier(.16,1,.3,1)) ===== */
+.simple-portfolio.has-motion [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s var(--ease-out)}
+.simple-portfolio.has-motion :where(.simple-service)[data-reveal]{transform:translate(-24px)}
+.simple-portfolio.has-motion :where(.simple-service:nth-child(2n))[data-reveal]{transform:translate(24px)}
+.simple-portfolio.has-motion [data-reveal].is-visible{opacity:1;transform:none}
+.simple-portfolio :is(button,a):focus-visible{outline:2px solid var(--focus);outline-offset:5px}
+
+@media(max-width:760px){
+  .simple-wrap{width:calc(100% - 40px)}
+  .simple-nav{width:calc(100% - 32px);top:12px;margin-top:12px;padding-left:20px;min-height:56px}
+  .simple-hero{grid-template-columns:1fr;padding:70px 0 90px;gap:45px}
+  .simple-hero__title{font-size:clamp(37px,8.7vw,65px)}
+  .simple-hero__intro{font-size:14px}
+  .simple-eyebrow{font-size:9px}
+  .simple-portrait{width:58%;max-width:280px;margin-left:auto;aspect-ratio:.9;padding:20px}
+  .simple-portrait__image{margin-bottom:15px}
+  .simple-portrait strong{font-size:21px}
+  .simple-portrait div>span{font-size:9px}
+  .simple-about{grid-template-columns:1fr;gap:12px;padding:65px 0}
+  .simple-about p:not(.simple-eyebrow){font-size:14px}
+  .simple-service-list{gap:30px;padding-bottom:30px}
+  .simple-service{width:92%;grid-template-columns:25px minmax(0,1fr);padding:20px 0;gap:12px}
+  .simple-service h3{font-size:32px}
+  .simple-service p{font-size:13px}
+  .simple-service .simple-service__tools{font-size:9px}
+  .simple-project,.simple-project:nth-of-type(2n){grid-template-columns:1fr;padding:40px 0 55px;gap:26px}
+  .simple-project:nth-of-type(2n) .simple-project__copy{order:initial}
+  .simple-project>.simple-project__media{width:68%;margin-left:auto}
+  .simple-contact{padding-block:55px}
+}
+@media(prefers-reduced-motion:reduce){
+  .simple-portfolio{scroll-behavior:auto}
+  .simple-portfolio.has-motion [data-reveal]{opacity:1;transform:none;transition:none}
+  .simple-portfolio.has-motion :where(.simple-service)[data-reveal]{transform:none}
+}
+</style>
+</head>
+<body data-mode="choice">
+
+<!-- ===== 첫 화면 ===== -->
+<section class="portfolio-entry" id="portfolio-entry" aria-labelledby="entry-title">
+  <div class="portfolio-entry__brand">이원영</div>
+  <div class="portfolio-entry__content">
+    <p class="portfolio-entry__eyebrow">이원영 / 산업경영공학과 3학년</p>
+    <h1 id="entry-title">파이팅!</h1>
+    <p class="portfolio-entry__intro">데이터로 묻고 답하는 산업경영공학도 이원영의 포트폴리오입니다.</p>
+    <div class="portfolio-entry__actions">
+      <button type="button" id="choose-simple">포트폴리오 보기 <span aria-hidden="true">↗</span></button>
+      <button type="button" id="choose-projects">대표 프로젝트 바로 보기 <span aria-hidden="true">↗</span></button>
+    </div>
+    <p class="portfolio-entry__note">언제든 이 화면으로 다시 돌아올 수 있어요.</p>
+  </div>
+</section>
+
+<!-- ===== 포트폴리오 본문 ===== -->
+<main class="simple-portfolio" id="simple-portfolio" aria-label="이원영 포트폴리오" tabindex="-1">
+  <header class="simple-nav">
+    <a href="#simple-home" class="simple-nav__brand">이원영</a>
+    <button class="simple-nav__toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="simple-nav-links"><span></span><span></span></button>
+    <nav id="simple-nav-links" class="simple-nav__links" aria-label="포트폴리오 메뉴" hidden>
+      <a href="#simple-about">소개</a>
+      <a href="#simple-services">역량</a>
+      <a href="#simple-projects">프로젝트</a>
+      <a href="#simple-contact">연락처</a>
+      <button type="button" data-choice>처음 화면 ↗</button>
+    </nav>
+  </header>
+
+  <div class="simple-wrap">
+    <section class="simple-hero" id="simple-home">
+      <div class="simple-hero__copy">
+        <p class="simple-eyebrow">이원영 / 산업경영공학과 3학년</p>
+        <h1 class="simple-hero__title" aria-label="안녕하세요, 산업경영공학과 이원영입니다.">
+          <span aria-hidden="true">안녕하세요,</span><span aria-hidden="true">산업경영공학과</span><span aria-hidden="true">이원영입니다.</span>
+        </h1>
+        <p class="simple-hero__intro">직접 모은 앨범 433개와 설문 70명의 응답으로 K-pop 컴백 예측 모델을 만들었고, 카드 한 장으로 나만의 해석을 받아 보는 AI 타로카드를 기획해 배포했습니다.</p>
+        <div class="simple-actions">
+          <a class="simple-link" href="#simple-projects">프로젝트 보기 <span aria-hidden="true">↓</span></a>
+          <a href="#simple-contact">연락하기 ↗</a>
+        </div>
+      </div>
+      <aside class="simple-portrait" aria-label="이원영 프로필">
+        <div class="simple-portrait__image simple-portrait__image--word" aria-hidden="true">파이팅!</div>
+        <div><strong>이원영</strong><span>산업경영공학과 3학년</span></div>
+      </aside>
+      <p class="simple-hero__note">나를 표현하는 한 줄,<br>파이팅!</p>
+    </section>
+
+    <section class="simple-about" id="simple-about" data-reveal>
+      <p class="simple-eyebrow">ABOUT ME / 소개</p>
+      <div>
+        <h2>나를 표현하는 한 줄,<br>파이팅!</h2>
+        <p>산업경영공학과 3학년 이원영입니다. SM · JYP · 스타쉽의 2015~2025년 앨범을 직접 엑셀로 정리하고, 사람들이 다음 앨범을 어떻게 예측하는지 설문으로 물어 예측 모델과 비교했습니다. 이 결과를 R&amp;Dix 2026 전시에서 포스터로 선보였습니다.</p>
+        <p>1학기에는 카드 한 장으로 나만의 해석을 받아 보는 AI 타로카드를 PRD · 기능명세서 · 유저플로우 · 와이어프레임으로 기획하고 배포했습니다.</p>
+      </div>
+    </section>
+
+    <section class="simple-services" id="simple-services">
+      <header class="simple-section-head" data-reveal>
+        <p class="simple-eyebrow" data-scramble>WHAT I DO</p>
+        <h2>나의 역량.</h2>
+        <p>데이터와 사람, 서비스 사이에서 직접 해 본 일입니다.</p>
+      </header>
+      <div class="simple-service-list">
+        <article class="simple-service" data-reveal>
+          <span class="simple-service__number">01</span>
+          <div>
+            <h3>데이터 분석과<br>예측 모델링.</h3>
+            <p>넓게 퍼진 판매량을 3등급 분류 문제로 정의하고, 후보 모델 7종을 튜닝해 스태킹 앙상블로 묶었습니다. 앞의 연도로 학습하고 뒤의 연도로 평가하는 시계열 검증을 지켰습니다.</p>
+            <p class="simple-service__tools">PYTHON / PANDAS / SCIKIT-LEARN / GOOGLE COLAB</p>
+          </div>
+        </article>
+        <article class="simple-service" data-reveal>
+          <span class="simple-service__number">02</span>
+          <div>
+            <h3>설문 설계와<br>사람 분석.</h3>
+            <p>70명에게 초동 예측 10문제를 내고, 답한 이유와 실제로 고른 답을 비교했습니다. 이항검정으로 "말한 것과 고른 것이 다르다"는 점을 확인해 비교 기준 모델을 만들었습니다.</p>
+            <p class="simple-service__tools">네이버 폼 / 이항검정 / MATPLOTLIB</p>
+          </div>
+        </article>
+        <article class="simple-service" data-reveal>
+          <span class="simple-service__number">03</span>
+          <div>
+            <h3>서비스 기획과<br>프로토타입.</h3>
+            <p>PRD · 기능명세서 · 유저플로우 · 와이어프레임으로 서비스를 정리하고, 개인정보를 저장하지 않는다는 원칙을 화면 안내까지 이어 설계했습니다.</p>
+            <p class="simple-service__tools">PRD / 와이어프레임 / FIGMA MAKE</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="simple-projects" id="simple-projects">
+      <header class="simple-section-head" data-reveal>
+        <p class="simple-eyebrow" data-scramble>SELECTED WORK</p>
+        <h2>프로젝트.</h2>
+        <p>직접 기획하고, 만들고, 검증한 작업입니다.</p>
+      </header>
+      <article class="simple-project" id="project-tarot" data-reveal>
+        <div class="simple-project__copy">
+          <span class="simple-badge">대표 프로젝트</span>
+          <span class="simple-eyebrow">01 / 모바일 웹서비스</span>
+          <h3>AI 타로카드</h3>
+          <ul class="simple-project__meta">
+            <li>1학기</li><li>FIGMA MAKE</li><li>기획 문서 4종</li>
+          </ul>
+          <p>이름 · 생년월일 · 전공과 궁금한 주제를 넣으면 메이저 아르카나 22장 중 한 장을 뽑아 3줄 맞춤 해석을 보여 줍니다. 입력한 정보는 저장하지 않고, 결과는 이미지로 저장하거나 친구에게 공유할 수 있습니다.</p>
+          <a class="simple-link" href="https://dimly-neon-74224366.figma.site" target="_blank" rel="noopener noreferrer">사이트 열어 보기 ↗</a>
+        </div>
+        <img src="images/tarot-start.jpg" alt="AI 타로카드 시작 화면: 오늘의 타로, 카드 세 장과 타로 시작 버튼" width="800" height="450" loading="lazy" decoding="async">
+      </article>
+      <article class="simple-project" id="project-comeback" data-reveal>
+        <div class="simple-project__copy">
+          <span class="simple-eyebrow">02 / 데이터 분석 · 머신러닝</span>
+          <h3>K-pop 컴백 예측 모델</h3>
+          <ul class="simple-project__meta">
+            <li>2026</li><li>R&amp;DIX 2026 전시</li><li>PYTHON · SCIKIT-LEARN</li>
+          </ul>
+          <p>SM · JYP · 스타쉽의 2015~2025년 앨범 433개로 다음 앨범의 초동 등급과 컴백 시기를 예측했습니다. 설문 70명으로 만든 사람 기준과 비교해 초동은 75.9% → 78.8%, 컴백 시기는 54.3% → 69.2%로 더 많이 맞혔습니다.</p>        </div>
+        <img src="images/comeback-scatter.png" alt="직전 앨범 초동과 이번 앨범 초동의 산점도. 333개 중 78.4%가 같은 등급" width="690" height="640" loading="lazy" decoding="async">
+      </article>
+    </section>
+
+    <section class="simple-contact" id="simple-contact" data-reveal>
+      <p class="simple-eyebrow">CONTACT / 연락처</p>
+      <h2>함께<br>이야기해요.</h2>
+      <a class="simple-contact__email" href="https://github.com/iwonyeong56-droid" target="_blank" rel="noopener noreferrer">github.com/iwonyeong56-droid ↗</a>    </section>
+
+    <section class="simple-other-side" data-reveal>
+      <p>처음 화면으로 돌아가 볼까요?</p>
+      <button type="button" data-choice>처음 화면으로 ↗</button>
+    </section>
+
+    <footer class="simple-footer">
+      <span>이원영 / 산업경영공학과</span>
+      <button type="button" data-choice>처음 화면 ↗</button>
+    </footer>
+  </div>
+</main>
+
+<script>
+(() => {
+  const body = document.body;
+  const main = document.getElementById('simple-portfolio');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const toggle = main.querySelector('.simple-nav__toggle');
+  const links = main.querySelector('.simple-nav__links');
+
+  function closeMenu(){ links.hidden = true; toggle.setAttribute('aria-expanded','false'); }
+  toggle.addEventListener('click', () => {
+    links.hidden = !links.hidden;
+    toggle.setAttribute('aria-expanded', String(!links.hidden));
+  });
+  main.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  function scrollToId(id){
+    main.querySelector(id)?.scrollIntoView({behavior: reduce.matches ? 'instant' : 'smooth', block:'start'});
+  }
+  main.querySelectorAll('a[href^="#simple-"]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); closeMenu(); scrollToId(a.getAttribute('href'));
+  }));
+
+  /* 원본 sign-scramble: 80ms 프레임, 200ms 지연 후 1800ms 동안 해제, 2000ms에 종료 */
+  const ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  function scramble(el){
+    if (reduce.matches || el.dataset.scrambled) return;
+    el.dataset.scrambled = 'true';
+    const text = el.textContent;
+    el.setAttribute('aria-label', text);
+    const total = text.replace(/\s/g,'').length;
+    const t0 = performance.now();
+    let lastFrame = -1;
+    function tick(now){
+      const dt = now - t0;
+      if (body.dataset.mode !== 'simple' || dt >= 2000){ el.textContent = text; return; }
+      const p = Math.min(1, Math.max(0, (dt - 200) / 1800));
+      const frame = Math.floor(dt / 80);
+      if (frame !== lastFrame){
+        lastFrame = frame;
+        let n = 0;
+        el.textContent = [...text].map(c => /\s/.test(c) || n++ < Math.ceil(p * total) ? c : ABC[Math.floor(Math.random()*ABC.length)]).join('');
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  /* 원본 reveal: IntersectionObserver threshold .12, 한 번만 */
+  const io = new IntersectionObserver(entries => entries.forEach(({target, isIntersecting}) => {
+    if (!isIntersecting) return;
+    target.classList.add('is-visible');
+    target.querySelectorAll('[data-scramble]').forEach(scramble);
+    io.unobserve(target);
+  }), {root: main, threshold: .12});
+  if (!reduce.matches) main.classList.add('has-motion');
+  main.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+  /* 원본 히어로 제목: rotateX(-85deg) → 0, 700ms, 110ms 간격 */
+  let animated = false;
+  function showSimple(target){
+    closeMenu();
+    body.dataset.mode = 'simple';
+    main.scrollTop = 0;
+    if (!animated){
+      animated = true;
+      if (!reduce.matches){
+        main.querySelectorAll('.simple-hero__title span').forEach((s, i) => s.animate(
+          [{opacity:0, transform:'rotateX(-85deg) translateY(15px)'}, {opacity:1, transform:'rotateX(0) translateY(0)'}],
+          {duration:700, delay:i*110, easing:'cubic-bezier(.16,1,.3,1)', fill:'both'}
+        ));
+      }
+    }
+    main.focus({preventScroll:true});
+    if (target) requestAnimationFrame(() => scrollToId(target));
+  }
+  function showChoice(){
+    closeMenu();
+    body.dataset.mode = 'choice';
+    document.getElementById('choose-simple').focus();
+  }
+
+  document.getElementById('choose-simple').addEventListener('click', () => showSimple());
+  document.getElementById('choose-projects').addEventListener('click', () => showSimple('#project-tarot'));
+  main.querySelectorAll('[data-choice]').forEach(b => b.addEventListener('click', showChoice));
+})();
+</script>
+</body>
+</html>
