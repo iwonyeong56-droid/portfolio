@@ -403,7 +403,8 @@ body:not([data-mode=simple]) #simple-portfolio{display:none}
   function showSimple(target){
     closeMenu();
     body.dataset.mode = 'simple';
-    main.scrollTop = 0;
+    /* CSS의 scroll-behavior:smooth 때문에 scrollTop=0 이 느린 스크롤이 되지 않도록 즉시 이동 */
+    main.scrollTo({top: 0, behavior: 'instant'});
     if (!animated){
       animated = true;
       if (!reduce.matches){
@@ -414,7 +415,20 @@ body:not([data-mode=simple]) #simple-portfolio{display:none}
       }
     }
     main.focus({preventScroll:true});
-    if (target) requestAnimationFrame(() => scrollToId(target));
+    if (target){
+      /* 글꼴이 늦게 불러와지면 높이가 바뀌어 스크롤이 어긋나므로, 글꼴을 기다린 뒤 이동하고 끝나면 위치를 한 번 더 맞춘다 */
+      document.fonts.ready.then(() => requestAnimationFrame(() => {
+        const fix = () => {
+          const el = main.querySelector(target);
+          if (!el || body.dataset.mode !== 'simple') return;
+          const off = el.getBoundingClientRect().top - main.getBoundingClientRect().top - 110;
+          if (Math.abs(off) > 4) main.scrollTo({top: main.scrollTop + off, behavior: 'instant'});
+        };
+        if ('onscrollend' in main) main.addEventListener('scrollend', fix, {once: true});
+        else setTimeout(fix, 1500);
+        scrollToId(target);
+      }));
+    }
   }
   function showChoice(){
     closeMenu();
